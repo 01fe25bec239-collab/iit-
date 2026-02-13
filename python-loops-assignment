@@ -1,1 +1,44 @@
+Q1:
+n=int(input("enter number"))
+for i in range (0,n+1):
+    print(i)
+    i=i+1
+    
+Q2:
+n=input("enter passward"_)
+while n=="admin123":
+    print("Access granted")
 
+Q3:
+scores = [72, 45, 89, 30, 60]
+for score in scores:
+    if score < 50:
+        print("Fail")
+        continue  # Skips further processing for this iteration
+    print("Pass")
+
+Q4:
+for num in range(1, 51):
+    if num % 7 == 0:
+        print(num)
+        break  
+
+Q5:
+
+for num in range(1, 11):
+    if num % 2 == 0:
+        continue 
+    print(num)
+Q6:
+
+total = 0
+
+while True:
+    num = int(input("Enter a number: "))
+    
+    if num == 0:
+        break 
+        
+    total += num  
+
+print(f"Total: {total}")
