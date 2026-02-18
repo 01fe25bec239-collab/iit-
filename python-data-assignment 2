@@ -1,0 +1,129 @@
+Q1:
+# 1. Storing marks of at least 8 students in a list
+student_marks = [78, 85, 90, 65, 72, 88, 92, 80]
+
+# 2. Printing the full list and specific slices
+print(f"Full List: {student_marks}")
+
+# Slicing the first 3 marks
+first_three = student_marks[:3]
+print(f"First 3 marks: {first_three}")
+
+# Slicing the last 3 marks
+last_three = student_marks[-3:]
+print(f"Last 3 marks: {last_three}")
+
+# 3. Calculating statistics using built-in functions
+highest = max(student_marks)
+lowest = min(student_marks)
+average = sum(student_marks) / len(student_marks)
+
+# Displaying the results
+print(f"Highest: {highest}")
+print(f"Lowest: {lowest}")
+print(f"Average: {average}")
+
+
+Q2:
+
+# 1. Create a contact book dictionary with at least 3 contacts
+contact_book = {
+    "Ravi": "9876543210",
+    "Anita": "9123456780",
+    "Omkar": "9988776655"
+}
+
+# 2. Print all contacts
+print("--- Current Contact Book ---")
+for name, number in contact_book.items():
+    print(f"{name}: {number}")
+print("----------------------------\n")
+
+# 3. Ask user for a name
+search_name = input("Enter the name you want to find: ")
+
+# 4. Use 'in' keyword for dictionary lookup
+if search_name in contact_book:
+    # Display the phone number if found
+    print(f"Phone number: {contact_book[search_name]}")
+else:
+    # Otherwise print Contact not found
+    print("Contact not found")
+
+
+Q3:
+
+# 1. Store employee details as a tuple (id, name, department)
+# Tuples use parentheses ()
+employee_info = (101, "Omkar", "Engineering")
+
+# 2. Store employee roles in a set
+# Sets use curly braces {}
+employee_roles = {"editor", "viewer", "admin"}
+
+# 3. Print employee info using tuple indexing
+print("--- Employee Information ---")
+print(f"ID: {employee_info[0]}")
+print(f"Name: {employee_info[1]}")
+print(f"Department: {employee_info[2]}")
+
+# 4. Check whether "admin" exists in roles using 'in'
+print("\n--- Access Check ---")
+if "admin" in employee_roles:
+    print("Admin Access: Yes")
+else:
+    print("Admin Access: No")
+
+
+
+Q4:
+
+
+# 1. Store multiple users in a list of dictionaries
+users = [
+    {
+        "name": "Alice",
+        "scores": [85, 90, 72],
+        "roles": {"editor", "admin"}
+    },
+    {
+        "name": "Bob",
+        "scores": [70, 65, 80],
+        "roles": {"viewer"}
+    },
+    {
+        "name": "Charlie",
+        "scores": [95, 88, 91],
+        "roles": {"admin", "viewer"}
+    }
+]
+
+# 2. Function to calculate average score
+def calculate_average(scores):
+    if not scores:
+        return 0
+    return sum(scores) / len(scores)
+
+# 3. Function to check for admin access
+def check_admin(roles):
+    # Returns True if "admin" is in the set, otherwise False
+    return "admin" in roles
+
+# 4. Main function to process and display data
+def main():
+    for user in users:
+        # Calculate average using our function
+        avg_score = calculate_average(user["scores"])
+        
+        # Check admin status using our function
+        has_admin = check_admin(user["roles"])
+        
+        # Display clean output
+        print(f"Name: {user['name']}")
+        print(f"Average Score: {avg_score:.1f}")
+        print(f"Admin Access: {has_admin}")
+        print("-" * 20)
+
+# Call main() to run the program
+if __name__ == "__main__":
+    main()
